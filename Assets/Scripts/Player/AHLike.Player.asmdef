@@ -1,0 +1,14 @@
+{
+    "name": "AHLike.Player",
+    "references": [
+        "GUID:1274fc45e1d5df54f835bb580e7944c9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
