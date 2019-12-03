@@ -5,10 +5,10 @@ namespace AHLike.Movement
 {
     internal abstract class MovementInput 
     {
-        protected Vector3 _movementDirection;
-
         internal event Action OnInputBegin;
         internal event Action OnInputEnded;
+
+        protected Vector3 _movementDirection;
 
         private bool _isMoving = false;
 

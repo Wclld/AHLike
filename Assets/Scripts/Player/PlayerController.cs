@@ -3,14 +3,15 @@ using AHLike.Movement;
 
 namespace AHLike.Player
 {
-    public class PlayerController : MonoBehaviour 
+    internal class PlayerController : MonoBehaviour 
     {
         [SerializeField] MovementController _movement;
 
         private void Update() 
         {
             _movement.Update();   
-        }      
+        }    
+
         private void LateUpdate() 
         {
             _movement.LateUpdate();    

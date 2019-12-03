@@ -8,10 +8,9 @@ namespace AHLike.Movement
     {
         [SerializeField] Rigidbody _rigidbody;
         [SerializeField] float _moveSpeed = 300;
+        private MovementInput _input;
         private Vector3 _movement;
         private Quaternion _direction;
-        private bool _isMoving;
-        private MovementInput _input;
 
         public MovementController()
         {
