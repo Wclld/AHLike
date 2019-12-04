@@ -7,11 +7,11 @@ namespace AHLike.Player
     {
         [SerializeField] MovementController _movement;
 
-        private void Awake() 
+        private void Start() 
         {
-            var rigidbody = GetComponent<Rigidbody>();
-            rigidbody.interpolation = RigidbodyInterpolation.Interpolate;    
+            GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
         }
+        
         private void Update() 
         {
             _movement.Update();   

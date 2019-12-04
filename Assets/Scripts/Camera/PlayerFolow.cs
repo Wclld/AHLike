@@ -18,7 +18,7 @@ namespace AHLike.Camera
         private void LateUpdate()
         {
             var newPos = _target.position + _camOffset;
-            transform.position = Vector3.SmoothDamp(transform.position, newPos, ref _velocity, _smoothTime);
+            transform.position = Vector3.SmoothDamp(transform.position, newPos, ref _velocity, _smoothTime,float.MaxValue,Time.deltaTime);
         }
     }    
 }
