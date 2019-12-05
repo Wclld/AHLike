@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AHLike.Movement
 {
-    internal class KeyboarInput : MovementInput
+    public class KeyboarInput : MovementInput
     {
         protected override Vector3 DetectMovementDirection()
         {

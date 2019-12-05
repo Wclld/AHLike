@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AHLike.Movement
 {
-    internal class JoystickInput : MovementInput
+    public class JoystickInput : MovementInput
     {
         protected override Vector3 DetectMovementDirection()
         {

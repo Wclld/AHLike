@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace AHLike.Movement
 {
-    internal abstract class MovementInput 
+    public abstract class MovementInput 
     {
-        internal event Action OnInputBegin;
-        internal event Action OnInputEnded;
+        public event Action OnInputBegin;
+        public event Action OnInputEnded;
 
         protected Vector3 _movementDirection;
 
@@ -16,7 +16,7 @@ namespace AHLike.Movement
         protected abstract Vector3 DetectMovementDirection();
 
 
-        internal Vector3 GetMovement()
+        public Vector3 GetMovement()
         {
             _movementDirection = DetectMovementDirection();
             
