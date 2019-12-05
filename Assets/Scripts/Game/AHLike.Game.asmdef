@@ -1,0 +1,14 @@
+{
+    "name": "AHLike.Game",
+    "references": [
+        "GUID:8ff2b5d6853e6ea4fa1ac29600ffcf9b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

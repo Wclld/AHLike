@@ -3,17 +3,18 @@ using UnityEngine;
 
 namespace AHLike.Rooms
 {
-    public class RoomManager : MonoBehaviour
+    public class RoomManager
     {
         public event Action<RoomInfo> OnRoomLoaded;
         public event Action OnRoomUnloaded;
 
+        [SerializeField] Transform _roomParent;
         private GameObject _currentMap;
 
 
         public void LoadRoom(GameObject roomPrefab)
         {
-            _currentMap = Instantiate(roomPrefab,Vector3.zero,Quaternion.identity,transform);
+            _currentMap = GameObject.Instantiate(roomPrefab,Vector3.zero,Quaternion.identity,_roomParent);
             var roomInfo = RoomInfo.GetRoomInfo(_currentMap);
             OnRoomLoaded?.Invoke(roomInfo);
         }
@@ -23,7 +24,7 @@ namespace AHLike.Rooms
         {
             if(_currentMap != null)
             {
-                Destroy(_currentMap);                
+                GameObject.Destroy(_currentMap);                
             }
             OnRoomUnloaded?.Invoke();
         }
