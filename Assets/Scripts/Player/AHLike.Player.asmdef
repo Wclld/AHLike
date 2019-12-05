@@ -1,7 +1,8 @@
 {
     "name": "AHLike.Player",
     "references": [
-        "GUID:1274fc45e1d5df54f835bb580e7944c9"
+        "GUID:1274fc45e1d5df54f835bb580e7944c9",
+        "GUID:baa764aa5d4b568489cd9d38d266a1cd"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
