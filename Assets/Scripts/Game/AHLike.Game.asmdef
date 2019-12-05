@@ -1,7 +1,10 @@
 {
     "name": "AHLike.Game",
     "references": [
-        "GUID:8ff2b5d6853e6ea4fa1ac29600ffcf9b"
+        "GUID:8ff2b5d6853e6ea4fa1ac29600ffcf9b",
+        "GUID:baa764aa5d4b568489cd9d38d266a1cd",
+        "GUID:b911b90719321b846a77981606ca95ca",
+        "GUID:809a9ab602013264d93c3d1cb3318eae"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

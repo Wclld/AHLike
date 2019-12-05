@@ -1,10 +1,12 @@
+using System;
 using AHLike.Data;
 using UnityEngine;
 
 namespace AHLike.Player
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager
     {
+        public event Action<GameObject> OnHeroChanged;
         private HeroInfo _currentHero;
         private GameObject _heroGO;
 
@@ -14,7 +16,8 @@ namespace AHLike.Player
             _currentHero = hero;
             if(hero.Prefab != null)
             {
-                _heroGO = Instantiate(hero.Prefab,Vector3.zero,Quaternion.identity,transform);
+                _heroGO = GameObject.Instantiate(hero.Prefab,Vector3.zero,Quaternion.identity);
+                OnHeroChanged?.Invoke(_heroGO);
             }
         }
 
@@ -30,7 +33,7 @@ namespace AHLike.Player
         {
             if(_heroGO != null)
             {
-                Destroy(_heroGO);
+                GameObject.Destroy(_heroGO);
             }
         }
     }

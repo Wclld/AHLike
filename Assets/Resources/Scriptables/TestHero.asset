@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b475d88fb9d82b49a161437d71d2077, type: 3}
   m_Name: TestHero
   m_EditorClassIdentifier: 
-  HeroModel: {fileID: 0}
-  Name: 
-  Icon: {fileID: 0}
-  MaxHP: 0
-  AtackSpeed: 0
-  AtackDamage: 0
+  Prefab: {fileID: 1192237087393101373, guid: bcde4ae2022741b40883efa3162cb486, type: 3}
+  Name: TEST
+  Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  MaxHP: 100
+  AtackSpeed: 60
+  AtackDamage: 1

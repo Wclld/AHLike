@@ -8,13 +8,12 @@ namespace AHLike.Rooms
         public event Action<RoomInfo> OnRoomLoaded;
         public event Action OnRoomUnloaded;
 
-        [SerializeField] Transform _roomParent;
         private GameObject _currentMap;
 
 
         public void LoadRoom(GameObject roomPrefab)
         {
-            _currentMap = GameObject.Instantiate(roomPrefab,Vector3.zero,Quaternion.identity,_roomParent);
+            _currentMap = GameObject.Instantiate(roomPrefab,Vector3.zero,Quaternion.identity);
             var roomInfo = RoomInfo.GetRoomInfo(_currentMap);
             OnRoomLoaded?.Invoke(roomInfo);
         }
