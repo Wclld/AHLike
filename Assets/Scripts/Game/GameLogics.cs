@@ -10,8 +10,8 @@ namespace AHLike.Game
         private RoomManager _roomManager;
         private void Start() 
         {
-                
+            _roomManager = new RoomManager();
+            _roomManager.LoadRoom(_rooms[0]);
         }
-
     }
 }
