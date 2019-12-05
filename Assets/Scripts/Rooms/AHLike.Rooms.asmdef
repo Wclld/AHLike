@@ -1,0 +1,14 @@
+{
+    "name": "AHLike.Rooms",
+    "references": [
+        "GUID:8f4e9225da25d7d4d9c40f19b303e865"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
