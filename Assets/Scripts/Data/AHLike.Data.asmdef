@@ -1,3 +1,15 @@
-﻿{
-	"name": "AHLike.Data"
+{
+    "name": "AHLike.Data",
+    "references": [
+        "GUID:7fe4b6f2cf3e06a4a906eb05f760cf99",
+        "GUID:60f61cbbc7b0fc74aaa77ad4665fd1d7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }

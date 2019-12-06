@@ -10,7 +10,10 @@ namespace AHLike.Player
         private HeroInfo _currentHero;
         private GameObject _heroGO;
 
-
+        public GameObject GetHeroGO()
+        {
+            return _heroGO;
+        }
         public void ChangeHero(HeroInfo hero)
         {
             _currentHero = hero;
