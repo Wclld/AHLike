@@ -2,7 +2,8 @@
     "name": "AHLike.Enemy",
     "references": [
         "GUID:baa764aa5d4b568489cd9d38d266a1cd",
-        "GUID:7fe4b6f2cf3e06a4a906eb05f760cf99"
+        "GUID:7fe4b6f2cf3e06a4a906eb05f760cf99",
+        "GUID:29cd20d278b34eb4ab9099eba11ae151"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

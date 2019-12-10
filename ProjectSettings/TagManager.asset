@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
+  - Bounds
   - Obstacles
-  - 
-  - 
-  - 
-  - 
+  - FlyingEnemy
+  - GroundEnemy
+  - Player
   - 
   - 
   - 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AHLike.Enemy.EnemyLogics
 {
-    public abstract class Chase : MonoBehaviour, IMove
+    public abstract class Chase : ScriptableObject, IMove
     {
         protected Transform _target;
 
@@ -17,7 +17,5 @@ namespace AHLike.Enemy.EnemyLogics
         {
             _target = target;
         }
-
-        
     }
 }

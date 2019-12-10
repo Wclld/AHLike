@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using UnityEngine;
 using AHLike.Data;
 using AHLike.Enemy.EnemyLogics;
-using UnityEngine;
+using AHLike.Helpers;
 
 namespace AHLike.Enemy
 {
@@ -20,10 +21,8 @@ namespace AHLike.Enemy
             _name = info.Name;
             _attackRate = info.AttackRate;
             _damage = info.Damage;
-            //Instantiate()
             _attackLogic = info.AttackLogic;
-            //_moveLogic = info.MoveLogic.;
-            Debug.Log("transform", transform);
+            _moveLogic = info.MoveLogic;
             _moveLogic.Transform = transform;
             _moveLogic.Speed = info.MoveSpeed;
             _moveLogic.SetLayer();
@@ -38,7 +37,6 @@ namespace AHLike.Enemy
         {
             while(_alive)
             {
-                Debug.Log("moving", gameObject);
                 _moveLogic.Move();
                 yield return null;
             }

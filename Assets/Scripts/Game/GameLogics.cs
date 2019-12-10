@@ -2,6 +2,7 @@
 using AHLike.Camera;
 using AHLike.Data;
 using AHLike.Enemy;
+using AHLike.Enemy.Navigation;
 using AHLike.Player;
 using AHLike.Rooms;
 
@@ -17,12 +18,14 @@ namespace AHLike.Game
         private EnemyManager _enemyManager;
         private PlayerFolow _playerFolow;
 
-
         private void Start() 
         {
             _playerFolow = PlayerFolow.Instance;
 
+            
             _roomManager = new RoomManager();
+            
+            _roomManager.OnRoomLoaded += SetNavMesh;
             _roomManager.OnRoomLoaded += SetPlayer;
             _roomManager.OnRoomLoaded += SetEnemies;
             _roomManager.LoadRoom(_rooms[0]);
@@ -41,6 +44,10 @@ namespace AHLike.Game
             var hero = _playerManager.GetHeroGO().transform;
             _enemyManager.SetRandomEnemiesOnPositions(room.EnemySpawnPositions, _enemies, hero);
             _enemyManager.BeginMove();
+        }
+        private void SetNavMesh(RoomInfo room)
+        {
+            NavigationManager.RebuildNavMesh(room.MeshSurface);
         }
     }
 }

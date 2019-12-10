@@ -1,8 +1,7 @@
 {
-    "name": "AHLike.Data",
+    "name": "AHLike.Enemy.Navigation",
     "references": [
-        "GUID:7fe4b6f2cf3e06a4a906eb05f760cf99",
-        "GUID:29cd20d278b34eb4ab9099eba11ae151"
+        "GUID:8c4dd21966739024fbd72155091d199e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

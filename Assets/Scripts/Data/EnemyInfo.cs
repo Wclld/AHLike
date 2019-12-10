@@ -1,4 +1,5 @@
 using AHLike.Enemy.EnemyLogics;
+using AHLike.Helpers;
 using UnityEngine;
 
 namespace AHLike.Data
@@ -11,24 +12,9 @@ namespace AHLike.Data
         public float MoveSpeed;
         public float AttackRate;
         public float Damage;
-        [SerializeField] GameObject _attackLogic;
-        [SerializeField] GameObject _moveLogic;
-        public IAttack AttackLogic => GetInterface<IAttack>(_attackLogic);
-        public IMove MoveLogic => GetInterface<IMove>(_moveLogic);
-
-        private T GetInterface<T>(GameObject interfaceObject) where T: class
-        {
-            T result;
-            
-            if (interfaceObject != null) 
-            {
-                result = interfaceObject.GetComponentInChildren<T> ();
-            } 
-            else 
-            {
-                result = interfaceObject as T;
-            }
-            return result;
-        }
+        [SerializeField] UnityEngine.Object _atackLogics;
+        [SerializeField] UnityEngine.Object _moveLogics;
+        public IAttack AttackLogic => ScriptableInterface.GetInterface<IAttack>(_atackLogics);
+        public IMove MoveLogic => ScriptableInterface.GetInterface<IMove>(_moveLogics);
     }
 }
