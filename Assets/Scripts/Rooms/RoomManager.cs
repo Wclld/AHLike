@@ -9,7 +9,7 @@ namespace AHLike.Rooms
         public event Action OnRoomUnloaded;
 
         private GameObject _currentMap;
-
+     
 
         public void LoadRoom(GameObject roomPrefab)
         {
@@ -17,7 +17,6 @@ namespace AHLike.Rooms
             var roomInfo = RoomInfo.GetRoomInfo(_currentMap);
             OnRoomLoaded?.Invoke(roomInfo);
         }
-        
 
         public void UnloadLastRoom()
         {

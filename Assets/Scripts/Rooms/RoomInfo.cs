@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace AHLike.Rooms
 {
@@ -10,6 +12,7 @@ namespace AHLike.Rooms
 
         public List<Vector3> EnemySpawnPositions;
         public Vector3 PlayerSpawnPosition;
+        public NavMeshSurface MeshSurface;
 
         private RoomInfo()
         {
@@ -20,12 +23,18 @@ namespace AHLike.Rooms
             RoomInfo result = new RoomInfo()
             {
                 EnemySpawnPositions = GetEnemySpawnPositions(room),
-                PlayerSpawnPosition = GetPlayerSpawnPosition(room)
+                PlayerSpawnPosition = GetPlayerSpawnPosition(room),
+                MeshSurface = GetNavMeshSurface(room)
             };
             
             return result;
         }
-        
+
+        private static NavMeshSurface GetNavMeshSurface(GameObject room)
+        {
+            return room.GetComponentInChildren<NavMeshSurface>();
+        }
+
         private static List<Vector3> GetEnemySpawnPositions(GameObject room)
         {
             var result = new List<Vector3>();
