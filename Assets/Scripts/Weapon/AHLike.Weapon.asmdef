@@ -1,9 +1,6 @@
 {
-    "name": "AHLike.Player",
+    "name": "AHLike.Weapon",
     "references": [
-        "GUID:baa764aa5d4b568489cd9d38d266a1cd",
-        "GUID:1274fc45e1d5df54f835bb580e7944c9",
-        "GUID:543d3adf9de8d5f45a126f86dfe55e6c",
         "GUID:1b82ba383c012dd4eb63545b7f79b4c3"
     ],
     "includePlatforms": [],

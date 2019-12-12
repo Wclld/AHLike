@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using AHLike.Camera;
 using AHLike.Data;
+using AHLike.Data.Weapon;
 using AHLike.Enemy;
 using AHLike.Enemy.Navigation;
 using AHLike.Player;
@@ -13,6 +14,7 @@ namespace AHLike.Game
         [SerializeField] GameObject[] _rooms;
         [SerializeField] HeroInfo[] _heroes;
         [SerializeField] EnemyInfo[] _enemies;
+        [SerializeField] MissileData[] _weapons;
         private RoomManager _roomManager;
         private PlayerManager _playerManager;
         private EnemyManager _enemyManager;
@@ -34,6 +36,7 @@ namespace AHLike.Game
         private void SetPlayer(RoomInfo room)
         {
             _playerManager = new PlayerManager();
+            _playerManager.ChangeWeapon(_weapons[0]);
             _playerManager.OnHeroChanged += x => _playerFolow.SetTarget(x.transform); 
             _playerManager.ChangeHero(_heroes[0]);
             _playerManager.SetHeroOnPosition(room.PlayerSpawnPosition);
