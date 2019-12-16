@@ -1,6 +1,6 @@
 using UnityEngine;
 using AHLike.Movement;
-using AHLike.Data;
+using System;
 
 namespace AHLike.Player
 {
@@ -13,17 +13,11 @@ namespace AHLike.Player
         private Vector3 _movement;
         private Quaternion _direction;
 
-        private void Start() 
+        internal void Init(MovementInput input)
         {
             _rigidbody = GetComponent<Rigidbody>();
             _rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-            #if UNITY_EDITOR
-            _input = new KeyboarInput();        
-#else 
-            _input = new JoystickInput();
-#endif    
-            _input.OnInputBegin += ()=> Debug.Log("On input Begin");
-            _input.OnInputEnded += ()=> Debug.Log("On input Ended");
+            _input = input;
         }
 
         private void Update() 

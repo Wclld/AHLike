@@ -253,6 +253,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7eeaf80327bb5d4b9b7cfe8ed9a7172, type: 2}
   _enemies:
   - {fileID: 11400000, guid: df500e6deabe6f0449a1d9e300689865, type: 2}
+  _weapons:
+  - {fileID: 11400000, guid: 5ced73af919df4b4f9326c89f5c27889, type: 2}
 --- !u!4 &1068149604
 Transform:
   m_ObjectHideFlags: 0
