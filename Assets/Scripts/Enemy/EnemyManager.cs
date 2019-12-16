@@ -7,6 +7,8 @@ namespace AHLike.Enemy
 {
     public class EnemyManager 
     {
+        public event Action<Transform> OnEnemySpawned;
+        public event Action<Transform> OnEnemyRemoved;
         private Transform _enemiesParent;
         private List<Enemy> _enemies = new List<Enemy>();
 
@@ -57,8 +59,10 @@ namespace AHLike.Enemy
         {
             var enemy = GameObject.Instantiate(info.Prefab, pos, Quaternion.identity, _enemiesParent).
             GetComponent<Enemy>();
-            enemy.SetFromInfo(info);
+            enemy.SetStatsFromInfo(info);
+            enemy.OnDeath += x => OnEnemyRemoved?.Invoke(x.transform);
             _enemies.Add(enemy);
+            OnEnemySpawned?.Invoke(enemy.transform);
         }
         
         private EnemyInfo[] GrowEnemiesLength(EnemyInfo[] enemies, int length)
