@@ -8,8 +8,8 @@ namespace AHLike.Weapon
     {
         private const int POOL_INCREASE_SIZE = 10;
         public MissileData CurrentWeapon => _currentWeapon;
-        MissileData _currentWeapon;
-        Stack<GameObject> _missilePool;
+        private MissileData _currentWeapon;
+        private Stack<GameObject> _missilePool;
 
         public void SetWeapon(MissileData missile)
         {
@@ -48,7 +48,6 @@ namespace AHLike.Weapon
             var result = GameObject.Instantiate(_currentWeapon.MissilePrefab);
             return result;
         }
-
 
         private void AddModifier(IModifier modifier)
         {

@@ -14,6 +14,8 @@ namespace AHLike.Movement
 
 
         protected abstract Vector3 DetectMovementDirection();
+
+        
         public void ClearEvents()
         {
             OnInputBegin = null;
