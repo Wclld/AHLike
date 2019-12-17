@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using AHLike.Data;
 using AHLike.Enemy.EnemyLogics;
-using System;
 
 namespace AHLike.Enemy
 {
