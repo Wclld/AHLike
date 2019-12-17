@@ -17,6 +17,7 @@ namespace AHLike.Player
         private MovementInput _input;
         private MissileSpawner _missileSpawner = new MissileSpawner();
         private MonoBehaviour _heroController;
+        private Transform _attackTarget;
         private Coroutine _attackCoroutine;
 
         public GameObject GetHeroGO()
@@ -41,7 +42,7 @@ namespace AHLike.Player
             _missileSpawner.SetWeapon(missile);
         }
 
-                public void SetHeroOnPosition(Vector3 position)
+        public void SetHeroOnPosition(Vector3 position)
         {
             if(_heroGO != null)
             {
@@ -56,7 +57,20 @@ namespace AHLike.Player
                 GameObject.Destroy(_heroGO);
             }
         }
-    
+
+        public void ChangeTarget(Transform targetTransform)
+        {
+            _attackTarget = targetTransform;
+        }
+
+        public void SubscribeToInputBegin(Action action)
+        {
+            _input.OnInputBegin += action;
+        }    
+        public void SubscribeToInputEnd(Action action)
+        {
+            _input.OnInputEnded += action;
+        }    
 
         private void InitController(GameObject hero)
         {
@@ -75,7 +89,7 @@ namespace AHLike.Player
         private void SubscribeOnInput()
         {
             _input.OnInputEnded += StartAttack;
-            _input.OnInputEnded += EndAttack;
+            _input.OnInputBegin += EndAttack;
         }
 
         private void StartAttack()
@@ -93,9 +107,12 @@ namespace AHLike.Player
             var waitTime = new WaitForSeconds(1 / _missileSpawner.CurrentWeapon.AttackSpeed);
             while(_heroController != null)
             {
-                var missile = _missileSpawner.GetMissile();
-                missile.transform.position = _heroController.transform.position;
-                missile.Init(_missileSpawner.CurrentWeapon,new Vector3(0,1,0));
+                if(_attackTarget != null)
+                { 
+                    var missile = _missileSpawner.GetMissile();
+                    missile.transform.position = _heroController.transform.position;
+                    missile.Init(_missileSpawner.CurrentWeapon,_attackTarget.position);
+                }
                 yield return waitTime;
             }
         }
