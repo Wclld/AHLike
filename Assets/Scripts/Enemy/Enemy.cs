@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using AHLike.Data;
 using AHLike.Enemy.EnemyLogics;
-using AHLike.Helpers;
 
 namespace AHLike.Enemy
 {
@@ -15,8 +14,9 @@ namespace AHLike.Enemy
         private IAttack _attackLogic;
         private IMove _moveLogic;
         [SerializeField] bool _alive = true;
+        public event Action<Enemy> OnDeath; 
 
-        public void SetFromInfo(EnemyInfo info)
+        public void SetStatsFromInfo(EnemyInfo info)
         {
             _name = info.Name;
             _attackRate = info.AttackRate;
@@ -45,6 +45,13 @@ namespace AHLike.Enemy
         public void SetTarget(Transform target)
         {
             _moveLogic.SetTarget(target);
+        }
+
+        [ContextMenu("Destroy enemy")]
+        public void SelfDestroy()
+        {
+            OnDeath?.Invoke(this);
+            Destroy(gameObject);
         }
     }
 }
