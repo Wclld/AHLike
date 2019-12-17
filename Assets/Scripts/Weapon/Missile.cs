@@ -12,7 +12,8 @@ namespace AHLike.Weapon
         {
             _rigidbody = GetComponent<Rigidbody>();
             transform.LookAt(target);
-            _rigidbody.velocity = Vector3.forward * data.FlightSpeed;
+            var direction = target - transform.position;
+            _rigidbody.velocity = direction.normalized * data.FlightSpeed;
         }
 
         private void OnCollisionEnter(Collision other) 

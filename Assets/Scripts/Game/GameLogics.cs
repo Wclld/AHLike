@@ -44,6 +44,7 @@ namespace AHLike.Game
             _playerManager.ChangeHero(_heroes[0]);
             _playerManager.SetHeroOnPosition(room.PlayerSpawnPosition);
             _targetManager.SetPlayer(_playerManager.GetHeroGO().transform);
+            _playerManager.SubscribeToInputEnd(() => _playerManager.ChangeTarget(_targetManager.GetClosestEnemy()));
         }
         private void SetEnemies(RoomInfo room)
         {

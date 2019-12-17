@@ -62,7 +62,15 @@ namespace AHLike.Player
         {
             _attackTarget = targetTransform;
         }
-    
+
+        public void SubscribeToInputBegin(Action action)
+        {
+            _input.OnInputBegin += action;
+        }    
+        public void SubscribeToInputEnd(Action action)
+        {
+            _input.OnInputEnded += action;
+        }    
 
         private void InitController(GameObject hero)
         {
@@ -81,7 +89,7 @@ namespace AHLike.Player
         private void SubscribeOnInput()
         {
             _input.OnInputEnded += StartAttack;
-            _input.OnInputEnded += EndAttack;
+            _input.OnInputBegin += EndAttack;
         }
 
         private void StartAttack()
