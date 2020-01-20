@@ -14,6 +14,7 @@ namespace AHLike.Enemy
         private IAttack _attackLogic;
         private IMove _moveLogic;
         [SerializeField] bool _alive = true;
+        [SerializeField] Transform _modelTransform;
         public event Action<Enemy> OnDeath; 
 
         public void SetStatsFromInfo(EnemyInfo info)
@@ -26,6 +27,7 @@ namespace AHLike.Enemy
             _moveLogic.Transform = transform;
             _moveLogic.Speed = info.MoveSpeed;
             _moveLogic.SetLayer();
+            _moveLogic.SetTransform(_modelTransform);
         }
 
         internal void Move()

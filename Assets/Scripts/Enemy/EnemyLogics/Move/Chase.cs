@@ -17,5 +17,9 @@ namespace AHLike.Enemy.EnemyLogics
         {
             _target = target;
         }
+        public void SetTransform(Transform transform)
+        {
+            Transform = transform;
+        }
     }
 }
