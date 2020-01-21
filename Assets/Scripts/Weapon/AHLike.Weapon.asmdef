@@ -1,7 +1,8 @@
 {
     "name": "AHLike.Weapon",
     "references": [
-        "GUID:1b82ba383c012dd4eb63545b7f79b4c3"
+        "GUID:1b82ba383c012dd4eb63545b7f79b4c3",
+        "GUID:9c5ae4cde0b52bd449687c25f18ff203"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

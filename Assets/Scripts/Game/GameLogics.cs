@@ -53,6 +53,7 @@ namespace AHLike.Game
             _enemyManager = new EnemyManager(new GameObject("Enemies").transform);
             _enemyManager.OnEnemySpawned += _targetManager.AddEnemy;
             _enemyManager.OnEnemySpawned += _healthBarManager.AddHealthBar;
+            _enemyManager.OnEnemyRemoved += _targetManager.RemoveEnemy;
             var hero = _playerManager.GetHeroGO().transform;
             _enemyManager.SetRandomEnemiesOnPositions(room.EnemySpawnPositions, _enemies, hero);
             _enemyManager.BindHealthBars(_healthBarManager);
