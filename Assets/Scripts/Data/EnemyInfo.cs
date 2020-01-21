@@ -8,7 +8,8 @@ namespace AHLike.Data
     public class EnemyInfo : ScriptableObject 
     {
         public string Name;
-        public GameObject Prefab;    
+        public GameObject Prefab;
+        public float MaxHP;  
         public float MoveSpeed;
         public float AttackRate;
         public float Damage;

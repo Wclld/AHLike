@@ -8,6 +8,7 @@ namespace AHLike.Enemy.EnemyLogics
         Transform Transform { set; }
         void Move();    
         void SetTarget(Transform target);
+        void SetTransform(Transform transform);
         void SetLayer();
     }
 }

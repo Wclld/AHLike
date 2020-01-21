@@ -7,6 +7,7 @@ using AHLike.Enemy.Navigation;
 using AHLike.Player;
 using AHLike.Rooms;
 using AHLike.Target;
+using AHLike.UI.HealthBar;
 
 namespace AHLike.Game
 {
@@ -16,6 +17,7 @@ namespace AHLike.Game
         [SerializeField] HeroInfo[] _heroes;
         [SerializeField] EnemyInfo[] _enemies;
         [SerializeField] MissileData[] _weapons;
+        [SerializeField] HealthBarManager _healthBarManager;
         private RoomManager _roomManager;
         private PlayerManager _playerManager;
         private EnemyManager _enemyManager;
@@ -50,8 +52,10 @@ namespace AHLike.Game
         {
             _enemyManager = new EnemyManager(new GameObject("Enemies").transform);
             _enemyManager.OnEnemySpawned += _targetManager.AddEnemy;
+            _enemyManager.OnEnemySpawned += _healthBarManager.AddHealthBar;
             var hero = _playerManager.GetHeroGO().transform;
             _enemyManager.SetRandomEnemiesOnPositions(room.EnemySpawnPositions, _enemies, hero);
+            _enemyManager.BindHealthBars(_healthBarManager);
             _enemyManager.BeginMove();
         }
         private void SetNavMesh(RoomInfo room)
