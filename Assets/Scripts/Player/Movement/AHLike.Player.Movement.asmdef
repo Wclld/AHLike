@@ -1,6 +1,8 @@
 {
     "name": "AHLike.Player.Movement",
-    "references": [],
+    "references": [
+        "GUID:9c5ae4cde0b52bd449687c25f18ff203"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

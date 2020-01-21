@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: TEST
   Prefab: {fileID: 7161371865453090723, guid: 6f934321678c4174f99258e91ea8c2c7, type: 3}
+  MaxHP: 100
   MoveSpeed: 50
   AttackRate: 60
   Damage: 1

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using AHLike.Data;
+using AHLike.UI.HealthBar;
 using System;
 
 namespace AHLike.Enemy
@@ -17,11 +18,18 @@ namespace AHLike.Enemy
             _enemiesParent = enemiesParent;
         }
 
+        public void BindHealthBars(HealthBarManager manager)
+        {
+            for (var i = 0; i < _enemies.Count; i++)
+            {
+                _enemies[i].BindHealthBar(manager);
+            }        
+        }
+
         public void BeginMove()
         {
             for (var i = 0; i < _enemies.Count; i++)
             {
-                Debug.Log(i);
                 _enemies[i].Move();
             }
         }

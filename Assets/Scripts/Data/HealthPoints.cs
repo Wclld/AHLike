@@ -24,12 +24,15 @@ namespace AHLike.Data
                 _currentValue =_maxValue;
             }
 
-            if(_currentValue <= 0)
+            if(_currentValue > 0)
+            {
+                OnChange?.Invoke(_currentValue/_maxValue);
+            }
+            else
             {
                 _currentValue = 0;
                 OnNoHP?.Invoke();
             }
-            OnChange?.Invoke(_currentValue);
         }
     } 
 }
